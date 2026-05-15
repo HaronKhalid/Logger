@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aero Logs | Premium Viewer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      Aero Logs
+    </div>
+    <div class="actions">
+      <button id="refresh-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+        Refresh
+      </button>
+      <button class="danger" id="clear-file-btn">Erase Current File</button>
+      <button class="danger" id="clear-all-btn">Erase All Logs</button>
+    </div>
+  </header>
+  
+  <main>
+    <aside class="sidebar">
+      <div class="sidebar-header">Log Files</div>
+      <ul class="file-list" id="file-list">
+        <!-- Files populated here -->
+      </ul>
+    </aside>
+    
+    <section class="log-container">
+      <div class="toolbar">
+        <input type="text" class="search-input" id="search-input" placeholder="Search logs, metadata, trace IDs...">
+        <select class="filter-select" id="level-filter">
+          <option value="all">All Levels</option>
+          <option value="error">Error</option>
+          <option value="security">Security</option>
+          <option value="audit">Audit</option>
+          <option value="warn">Warn</option>
+          <option value="info">Info</option>
+          <option value="http">HTTP</option>
+          <option value="debug">Debug</option>
+          <option value="trace">Trace</option>
+        </select>
+      </div>
+      
+      <div class="logs" id="logs-container">
+        <!-- Log entries populated here -->
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
